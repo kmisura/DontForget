@@ -2,6 +2,8 @@
     <string name="app_name">DontForget</string>
     <string name="action_settings">Settings</string>
 
+    <string name="content_authority" translatable="false">com.misura.dontforget</string>
+
     <!-- Add reminder activity -->
     <string name="reminder_title">Title</string>
     <string name="reminer_description">Description</string>
