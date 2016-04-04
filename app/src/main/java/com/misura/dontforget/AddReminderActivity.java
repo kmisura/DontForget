@@ -2,7 +2,9 @@ package com.misura.dontforget;
 
 import android.content.ContentValues;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,10 +19,22 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mTitle = (EditText) findViewById(R.id.add_reminder_et_title);
         mDescription = (EditText) findViewById(R.id.add_reminder_et_description);
         mFinish = (Button) findViewById(R.id.add_reminder_button_add_reminder);
         mFinish.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
