@@ -10,4 +10,5 @@
     <string name="reminder_add_location_trigger">+ Location Trigger</string>
     <string name="reminder_add_time_trigger">+ Time Trigger</string>
     <string name="finish">Finish</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.misura.dontforget.create.AddReminderActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, LoaderManager.LoaderCallbacks<Cursor> {
     static final int COL_ID = 0;
     static final int COL_TITLE = 1;
