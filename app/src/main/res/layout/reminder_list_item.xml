@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- TODO: Remove hardcoded dimensions -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
+<android.support.v7.widget.CardView
+    android:id="@+id/add_reminder_group_time_trigger"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="4dp"
+    card_view:cardCornerRadius="4dp">
 
-    <ImageView
-        android:id="@+id/reminder_list_item_icon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/ic_alarm_black_24dp"
-        />
-
-    <TextView
-        android:id="@+id/reminder_list_item_text_title"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/reminder_list_item_icon"
-        android:text="Title"
-        />
+        android:layout_margin="8dp">
 
-    <TextView
-        android:id="@+id/reminder_list_item_text_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/reminder_list_item_text_title"
-        android:layout_toRightOf="@id/reminder_list_item_icon"
-        android:text="Details"
-        />
+        <ImageView
+            android:id="@+id/reminder_list_item_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_alarm_black_24dp"
+            />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/reminder_list_item_text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/reminder_list_item_icon"
+            android:text="Title"
+            />
+
+        <TextView
+            android:id="@+id/reminder_list_item_text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reminder_list_item_text_title"
+            android:layout_toRightOf="@id/reminder_list_item_icon"
+            android:text="Details"
+            />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
