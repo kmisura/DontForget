@@ -21,11 +21,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     static final int COL_ID = 0;
     static final int COL_TITLE = 1;
     static final int COL_DESCRIPTION = 2;
+    static final int COL_REMAINING_TIME = 3;
     private static final int REMINDERS_LOADER = 0;
     private static final String[] REMINDERS_LIST_COLUMNS = new String[]{
             RemindersContract.ReminderEntry._ID,
             RemindersContract.ReminderEntry.COLUMN_TITLE,
-            RemindersContract.ReminderEntry.COLUMN_DESCRIPTION
+            RemindersContract.ReminderEntry.COLUMN_DESCRIPTION,
+            RemindersContract.ReminderEntry.COLUMN_TIME
     };
     private FloatingActionButton mAddReminderButton;
     private ReminderListAdapter mListAdapter;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.main_activity_title);
         setSupportActionBar(toolbar);
 
         mAddReminderButton = (FloatingActionButton) findViewById(R.id.fab);

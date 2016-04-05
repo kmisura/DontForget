@@ -4,6 +4,13 @@
 
     <string name="content_authority" translatable="false">com.misura.dontforget</string>
 
+    <!-- Main Activity -->
+    <string name="main_activity_title">Reminders</string>
+    <string name="main_activity_remaining_time_seconds">%1$d sec</string>
+    <string name="main_activity_remaining_time_minutes_seconds">%1$d m %2$d sec</string>
+    <string name="main_activity_remaining_time_hours_minutes">%1$d h %2$d m</string>
+    <string name="main_activity_remaining_time_days_hours">%1$d days %2$d h</string>
+
     <!-- Add reminder activity -->
     <string name="reminder_title">Title</string>
     <string name="reminer_description">Description</string>
@@ -11,4 +18,5 @@
     <string name="reminder_add_time_trigger">+ Time Trigger</string>
     <string name="finish">Finish</string>
     <string name="delete">Delete</string>
+    <string name="add_reminder_activity_title">Add New Reminder</string>
 </resources>

@@ -29,6 +29,7 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
     private Button mAddTimeTrigger;
     private Button mFinish;
     private Calendar tmpCalendar;
+    private Calendar mFinalCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_add_reminder);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(R.string.add_reminder_activity_title);
 
         mTitle = (EditText) findViewById(R.id.add_reminder_et_title);
         mDescription = (EditText) findViewById(R.id.add_reminder_et_description);
@@ -71,6 +73,7 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
             dateFragment.show(getFragmentManager(), "datePicker");
         } else if (v == mTimeTriggerRemove) {
             tmpCalendar = null;
+            mFinalCalendar = null;
             mTimeTriggerGroup.setVisibility(View.GONE);
             mAddTimeTrigger.setVisibility(View.VISIBLE);
         }
@@ -83,6 +86,11 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
         ContentValues contentValues = new ContentValues();
         contentValues.put(RemindersContract.ReminderEntry.COLUMN_TITLE, title);
         contentValues.put(RemindersContract.ReminderEntry.COLUMN_DESCRIPTION, description);
+        if (mFinalCalendar != null) {
+            int time = (int) (mFinalCalendar.getTimeInMillis() / 1000);
+            contentValues.put(RemindersContract.ReminderEntry.COLUMN_TIME, time);
+        }
+
         getContentResolver().insert(RemindersContract.ReminderEntry.CONTENT_URI, contentValues);
     }
 
@@ -107,5 +115,6 @@ public class AddReminderActivity extends AppCompatActivity implements View.OnCli
         SimpleDateFormat format = new SimpleDateFormat("EEEE, MMMM d, yyyy 'at' h:mm a");
         String formattedTime = format.format(tmpCalendar.getTime());
         mTimeTriggerText.setText(formattedTime);
+        mFinalCalendar = tmpCalendar;
     }
 }
