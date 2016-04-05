@@ -22,12 +22,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     static final int COL_TITLE = 1;
     static final int COL_DESCRIPTION = 2;
     static final int COL_REMAINING_TIME = 3;
+    static final int COL_LOCATION_NAME = 4;
     private static final int REMINDERS_LOADER = 0;
     private static final String[] REMINDERS_LIST_COLUMNS = new String[]{
             RemindersContract.ReminderEntry._ID,
             RemindersContract.ReminderEntry.COLUMN_TITLE,
             RemindersContract.ReminderEntry.COLUMN_DESCRIPTION,
-            RemindersContract.ReminderEntry.COLUMN_TIME
+            RemindersContract.ReminderEntry.COLUMN_TIME,
+            RemindersContract.ReminderEntry.COLUMN_LOCATION_NAME
     };
     private FloatingActionButton mAddReminderButton;
     private ReminderListAdapter mListAdapter;

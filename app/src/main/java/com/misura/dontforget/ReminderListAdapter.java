@@ -3,6 +3,7 @@ package com.misura.dontforget;
 import android.content.Context;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,11 @@ public class ReminderListAdapter extends CursorRecyclerViewAdapter<ReminderListA
     public void onBindViewHolder(ViewHolder viewHolder, Cursor cursor) {
         viewHolder.titleView.setText(cursor.getString(MainActivity.COL_TITLE));
         viewHolder.descriptionView.setText(cursor.getString(MainActivity.COL_DESCRIPTION));
-        viewHolder.remainingView.setText(getFormattedRemainingTime(cursor.getInt(MainActivity.COL_REMAINING_TIME)));
+        if (cursor.getString(MainActivity.COL_LOCATION_NAME) != null) {
+            viewHolder.remainingView.setText(cursor.getString(MainActivity.COL_LOCATION_NAME));
+        } else {
+            viewHolder.remainingView.setText(getFormattedRemainingTime(cursor.getInt(MainActivity.COL_REMAINING_TIME)));
+        }
     }
 
     private String getFormattedRemainingTime(int secondsSinceEpoch) {
